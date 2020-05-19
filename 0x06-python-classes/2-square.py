@@ -1,6 +1,19 @@
 #!/usr/bin/python3
+"""
+Square
+"""
+
+
 class Square:
+    """
+    Validate a square
+    """
+
     def __init__(self, size=0):
+        """
+        Class constructor
+        Parameter size: size of the square
+        """
         self.__size = size
 
         if type(size) != int:
