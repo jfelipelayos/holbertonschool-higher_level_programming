@@ -8,8 +8,8 @@ def add_integer(a, b=98):
         b {int} -- Integer to add (default: {98})
 
     Raises:
-        TypeError: If the first argument its not an int or float print "a must be an integer"
-        TypeError: If the second argument its not an integer or float print "b must be an integer"
+        TypeError: If the first argument itsn't an int or float print error
+        TypeError:If the second argument itsn't an integer or float print error
 
     Returns:
         Int -- Add of the two integers
