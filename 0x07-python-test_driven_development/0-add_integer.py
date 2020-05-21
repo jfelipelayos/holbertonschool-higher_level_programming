@@ -11,3 +11,6 @@ def add_integer(a, b=98):
     b = int(b)
 
     return a + b
+
+def test_add_integer():
+    assert add_integer(1,3.5) == 4
