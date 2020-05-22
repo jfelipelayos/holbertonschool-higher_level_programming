@@ -1,0 +1,35 @@
+===================================
+| Test Cases for 3-say_my_name.py |
+===================================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+#Two strings
+>>> say_my_name("James", "Het")
+My name is James Het
+
+#String and integer
+>>> say_my_name("Juan", 5)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+#Integer and string
+>>> say_my_name(5, "Juan")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+#String and number string
+>>> say_my_name("Kirk", "12873")
+My name is Kirk 12873
+
+#Just 1 parameter
+>>> say_my_name("Robert")
+My name is Robert 
+
+#Void
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
