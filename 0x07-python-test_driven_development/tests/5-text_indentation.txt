@@ -1,0 +1,47 @@
+=========================================
+| Test Cases for 5-text_indentation.txt |
+=========================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("  string.")
+string.
+<BLANKLINE>
+
+>>> text_indentation("hello:   World?")
+hello:
+<BLANKLINE>
+World?
+<BLANKLINE>
+
+>>> text_indentation("")
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(25)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("Hello. World? Hola: Mundo")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Hola:
+<BLANKLINE>
+Mundo
+
+>>> text_indentation("?Betty pep8.")
+?
+<BLANKLINE>
+Betty pep8.
+<BLANKLINE>
