@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""add two integers
-    """
+"""
+add two integers
+"""
 
 
 def add_integer(a, b=98):
@@ -19,7 +20,7 @@ def add_integer(a, b=98):
         OverflowError: overflow case
 
     Returns:
-        [type] -- [description]
+        int -- add of a and b
     """
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
