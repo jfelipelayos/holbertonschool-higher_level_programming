@@ -50,6 +50,10 @@ Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
+>>> add_integer(4, {5, 7})
+Traceback (most recent call last):
+TypeError: b must be an integer
+
 #Add one boolean and one string
 >>> add_integer(True,'hello')
 Traceback (most recent call last):
