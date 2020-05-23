@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Add integer func
+"""
+
+
 def add_integer(a, b=98):
     """Add two integers
 
