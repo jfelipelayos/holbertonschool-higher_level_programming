@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Add integer func
+add integer func
 """
 
 
@@ -8,24 +8,23 @@ def add_integer(a, b=98):
     """Add two integers
 
     Arguments:
-        a {int} -- Integer to add
+        a {int} -- first number to add
 
     Keyword Arguments:
-        b {int} -- Integer to add (default: {98})
+        b {int} -- second number to add (default: {98})
 
     Raises:
-        TypeError: If the first argument itsn't an int or float print error
-        TypeError:If the second argument itsn't an integer or float print error
+        TypeError: if a aren't int or float print error
+        TypeError: if b aren't int or floar print error
 
     Returns:
-        Int -- Add of the two integers
+        int -- add of a and b
     """
 
-    if type(a) not in [int, float]:
-        raise TypeError('a must be an integer')
-
-    if type(b) not in [int, float]:
-        raise TypeError('b must be an integer')
+    if type(a) is not int and type(a) is not float:
+        raise TypeError("a must be an integer")
+    if type(b) is not int and type(b) is not float:
+        raise TypeError("b must be an integer")
 
     a = int(a)
     b = int(b)
