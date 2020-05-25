@@ -104,11 +104,9 @@ class Rectangle:
             return rect
         if type(self.print_symbol) is not str:
             self.print_symbol = str(self.print_symbol)
-        for i in range(self.__height):
-            if i == self.__height - 1:
-                rect += ("#" * self.__width)
-            else:
-                rect += ("#" * self.__width) + '\n'
+        for i in range(self.__height - 1):
+            rect += (self.print_symbol * self.__width) + '\n'
+        rect += (self.print_symbol * self.__width)
         return rect
 
     def __repr__(self):
@@ -117,7 +115,7 @@ class Rectangle:
         Returns:
             str -- Rectangle coords
         """
-        return 'Rectangle({},{})'.format(self.__width, self.__height)
+        return 'Rectangle({}, {})'.format(self.__width, self.__height)
 
     def __del__(self):
         """Delete an attribute
