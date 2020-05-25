@@ -98,11 +98,9 @@ class Rectangle:
         rect = ''
         if self.__width == 0 or self.__height == 0:
             return rect
-        for i in range(self.__height):
-            if i == self.__height - 1:
-                rect += ("#" * self.__width)
-            else:
-                rect += ("#" * self.__width) + '\n'
+        for i in range(self.__height - 1):
+            rect += ("#" * self.__width) + '\n'
+        rect += ("#" * self.__width)
         return rect
 
     def __repr__(self):
