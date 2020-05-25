@@ -101,6 +101,7 @@ class Rectangle:
         rect = ''
         if self.__width == 0 or self.__height == 0:
             return rect
-        for i in range(self.__height):
+        for i in range(self.__height - 1):
             rect += ("#" * self.__width) + '\n'
+        rect += ("#" * self.__width)
         return rect
