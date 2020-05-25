@@ -90,6 +90,11 @@ class Rectangle:
             return self.__height + self.__width + self.__height + self.__width
 
     def __str__(self):
+        """Print rectangle
+
+        Returns:
+            str -- rectangle
+        """
         rect = ''
         if self.__width == 0 or self.__height == 0:
             return rect
