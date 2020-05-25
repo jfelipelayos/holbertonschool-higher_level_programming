@@ -79,7 +79,7 @@ class Rectangle:
         Returns:
             int -- area of the rectangle
         """
-        return self.height * self.width
+        return self.__height * self.__width
 
     def perimeter(self):
         """Find perimeter of the rectangle
@@ -87,10 +87,10 @@ class Rectangle:
         Returns:
             int -- perimeter of the rectangle
         """
-        if self.height == 0 or self.width == 0:
+        if self.__height == 0 or self.__width == 0:
             return 0
         else:
-            return self.height + self.width + self.height + self.width
+            return self.__height + self.__width + self.__height + self.__width
 
     def __str__(self):
         """Print rectangle
@@ -102,7 +102,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return rect
         for i in range(self.__height):
-            rect += ("#" * self.__width) + '\n'
+            if i == self.__height - 1:
+                rect += ("#" * self.__width)
+            else:
+                rect += ("#" * self.__width) + '\n'
         return rect
 
     def __repr__(self):
@@ -111,7 +114,7 @@ class Rectangle:
         Returns:
             str -- Rectangle coords
         """
-        return 'Rectangle({},{})'.format(self.width, self.height)
+        return 'Rectangle({},{})'.format(self.__width, self.__height)
 
     def __del__(self):
         """Delete an attribute
