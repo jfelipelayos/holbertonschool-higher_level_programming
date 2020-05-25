@@ -158,4 +158,4 @@ class Rectangle:
         Returns:
             Rectangle -- rentangle with the specified size
         """
-        return cls(size, size)
+        return Rectangle(size, size)
