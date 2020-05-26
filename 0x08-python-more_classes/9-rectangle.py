@@ -23,8 +23,8 @@ class Rectangle:
             width {int} -- Rectangle width (default: {0})
             height {int} -- Rectangle height (default: {0})
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -159,4 +159,4 @@ class Rectangle:
         Returns:
             Rectangle -- rentangle with the specified size
         """
-        return Rectangle(size, size)
+        return cls(size, size)
