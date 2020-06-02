@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""[summary]
+    """
+
+
 def inherits_from(obj, a_class):
     """Find if an object is a subclass
 
