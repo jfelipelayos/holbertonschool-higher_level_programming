@@ -6,6 +6,15 @@ the specified class ; otherwise False.
 
 
 def is_kind_of_class(obj, a_class):
+    """Find if an object is an instace of a class
+
+    Arguments:
+        obj {object} -- object to compare
+        a_class {class} -- class to compare
+
+    Returns:
+        bool -- true if its instance, otherwise false.
+    """
 
     status = isinstance(obj, a_class)
     return status
