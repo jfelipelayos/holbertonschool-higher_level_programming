@@ -10,6 +10,6 @@ def read_file(filename=""):
         filename (str, optional): File to print. Defaults to "".
     """
 
-    with open(filename, encoding='utf8') as a_file:
+    with open(filename, encoding='utf-8') as a_file:
         for line in a_file:
             print(line, end="")
