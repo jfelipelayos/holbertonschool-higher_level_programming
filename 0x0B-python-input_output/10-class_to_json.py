@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Class to jason module
     """
+
+
 def class_to_json(obj):
     """Class to JSON
 
@@ -11,4 +13,4 @@ def class_to_json(obj):
         object: dict
     """
 
-    return obj.__dir__
+    return obj.__dict__
