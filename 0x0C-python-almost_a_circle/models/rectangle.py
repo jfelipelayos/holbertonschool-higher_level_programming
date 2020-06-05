@@ -83,3 +83,12 @@ class Rectangle(Base):
             int: area of the rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """Display graphic rectangle on stdout
+        """
+
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print('#', end="")
+            print()
