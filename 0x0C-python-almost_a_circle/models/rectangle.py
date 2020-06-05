@@ -75,3 +75,11 @@ class Rectangle(Base):
                 raise ValueError('{} must be > 0'.format(name))
             else:
                 raise ValueError('{} must be >= 0'.format(name))
+
+    def area(self):
+        """Find area of a rectangle
+
+        Returns:
+            int: area of the rectangle
+        """
+        return self.__width * self.__height
