@@ -104,7 +104,7 @@ class Rectangle(Base):
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
-        """Update arguments
+        """[summary]
         """
         if args:
             original_elements = [self.id, self.__width,
@@ -128,3 +128,18 @@ class Rectangle(Base):
                     self.__x = kwargs[i]
                 if i == "y":
                     self.__y = kwargs[i]
+
+    def to_dictionary(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        rectangle_dict = {"id": self.id,
+                          "width": self.__width,
+                          "height": self.__height,
+                          "x": self.__x,
+                          "y": self.__y}
+
+        # rectangle_dict = self.__dict__
+        return rectangle_dict
