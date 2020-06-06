@@ -100,5 +100,31 @@ class Rectangle(Base):
         Returns:
             str: default __str__ output
         """
-        return ('[Rectangle] ({}) {}/{} - {}/{}')\
+        return ('[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}')\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """Update arguments
+        """
+        if args:
+            original_elements = [self.id, self.__width,
+                                 self.__height, self.__x, self.__y]
+
+            updated_elements = list(
+                args[:len(args)]) + original_elements[len(args):]
+
+            (self.id, self.__width, self.__height,
+             self.__x, self.__y) = updated_elements
+
+        else:
+            for i in kwargs:
+                if i == "id":
+                    self.id = kwargs[i]
+                if i == "width":
+                    self.__width = kwargs[i]
+                if i == "height":
+                    self.__height = kwargs[i]
+                if i == "x":
+                    self.__x = kwargs[i]
+                if i == "y":
+                    self.__y = kwargs[i]
