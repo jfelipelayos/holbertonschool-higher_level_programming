@@ -10,7 +10,7 @@ class Base:
     """
     __nb_objects = 0
 
-    def __init__(self, id = None):
+    def __init__(self, id=None):
 
         if id is not None:
             self.id = id
@@ -35,7 +35,7 @@ class Base:
             json_representation = "[]"
 
         return json_representation
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """[summary]
@@ -43,13 +43,11 @@ class Base:
         Args:
             list_objs ([type]): [description]
         """
-        if list_objs:
-            new_json_representation = cls.to_json_string(list_objs)
-            
-            
-        else:
-            new_json_representation = []
-               
-        with open("{}.json".format(cls.__name__), encoding='utf8', mode='w') as file:
-            file.write(new_json_representation)
-        
+        with open('{}.json'.format(cls.__name__), mode='w') as f:
+
+            if list_objs:
+                json_base_representation = [obj.to_dictionary() for obj in list_objs]
+                f.write(cls.to_json_string(json_base_representation))
+            else:
+                f.write(cls.to_json_string([]))
+                
