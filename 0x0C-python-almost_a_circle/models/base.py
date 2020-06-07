@@ -2,6 +2,8 @@
 """Models module
     """
 import json
+import turtle
+import random
 
 
 class Base:
@@ -94,3 +96,13 @@ class Base:
 
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """[summary]
+
+        Args:
+            list_rectangles ([type]): [description]
+            list_squares ([type]): [description]
+        """
+        pass
