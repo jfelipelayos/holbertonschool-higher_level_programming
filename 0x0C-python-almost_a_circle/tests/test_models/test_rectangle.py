@@ -11,16 +11,18 @@ import io
 import sys
 from io import StringIO
 
+
 class TestRectangle(unittest.TestCase):
     """ test
     """
+
     def tearDown(self):
         """tears down obj count
         """
         Base.__Base__nb_objects = 0
         self.assertEqual(Base.__Base__nb_objects, 0)
 
-    @classmethod 
+    @classmethod
     def setUpClass(cls):
         Base._Base__nb_objects = 0
         cls.var1 = Rectangle(10, 2)
@@ -40,13 +42,13 @@ class TestRectangle(unittest.TestCase):
         self.assertIsNotNone(Rectangle.__str__.__doc__)
         self.assertIsNotNone(Rectangle.update.__doc__)
         self.assertIsNotNone(Rectangle.to_dictionary.__doc__)
-    
+
     def test_instance_Rect(self):
         """test instance for rectangle
         """
-        self.assertEqual(self.var1.id, 1) 
-        self.assertEqual(self.var2.id, 99) 
-        self.var2.id = "Marlon" 
+        self.assertEqual(self.var1.id, 1)
+        self.assertEqual(self.var2.id, 99)
+        self.var2.id = "Marlon"
         self.assertEqual(self.var2.id, "Marlon")
 
     def test_area(self):
@@ -55,7 +57,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.var1.area(), 20)
         self.assertEqual(self.var2.area(), 24)
 
-    def test_display(self): 
+    def test_display(self):
         """test module Display
         """
         out1 = Rectangle(3, 5)
@@ -77,21 +79,21 @@ class TestRectangle(unittest.TestCase):
     def test_attr_errors(self):
         """test Errors
         """
-        Base._Base__nb_objects = 0 
-        with self.assertRaises(TypeError, msg="height must be an integer"): 
-            var11 = Rectangle(10, "2") 
-        with self.assertRaises(ValueError, msg="height must be > 0"): 
-            varr11 = Rectangle(-2, 1) 
-        with self.assertRaises(TypeError, msg="width must be an integer"): 
-            varr11 = Rectangle({1: 2}, 2) 
-        with self.assertRaises(ValueError, msg="width must be > 0"): 
-            varr21 = Rectangle(10, 2) 
-            varr21.width = -10 
-        with self.assertRaises(TypeError, msg="x must be an integer"): 
-            varr31 = Rectangle(10, 2) 
-            varr31.x = {} 
-        with self.assertRaises(ValueError, msg="y must be >=0"): 
-            varr41 = Rectangle(10, 2, 3, -1) 
+        Base._Base__nb_objects = 0
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            var11 = Rectangle(10, "2")
+        with self.assertRaises(ValueError, msg="height must be > 0"):
+            varr11 = Rectangle(-2, 1)
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            varr11 = Rectangle({1: 2}, 2)
+        with self.assertRaises(ValueError, msg="width must be > 0"):
+            varr21 = Rectangle(10, 2)
+            varr21.width = -10
+        with self.assertRaises(TypeError, msg="x must be an integer"):
+            varr31 = Rectangle(10, 2)
+            varr31.x = {}
+        with self.assertRaises(ValueError, msg="y must be >=0"):
+            varr41 = Rectangle(10, 2, 3, -1)
 
     def test_style_base(self):
         """
@@ -101,6 +103,6 @@ class TestRectangle(unittest.TestCase):
         p = style.check_files(['models/rectangle.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
-if __name__ == '__main__': 
-    unittest.main()
 
+if __name__ == '__main__':
+    unittest.main()
