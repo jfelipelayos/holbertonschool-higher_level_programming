@@ -1,8 +1,9 @@
 # !/usr/bin/python3
 """Models module
     """
+
+
 import json
-import random
 
 
 class Base:
@@ -98,5 +99,5 @@ class Base:
                 instances_list = cls.from_json_string(f.read())
                 return [cls.create(**dic) for dic in instances_list]
 
-        except FileNotFoundError:
+        except:
             return []
