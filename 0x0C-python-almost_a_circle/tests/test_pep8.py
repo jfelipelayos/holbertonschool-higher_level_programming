@@ -12,7 +12,7 @@ class TestPep8(unittest.TestCase):
     """[summary]
 
     Args:
-        unittest ([type]): [description]
+        unittest ([type]): [descriptin]
     """
 
     def test_pep8(self):
