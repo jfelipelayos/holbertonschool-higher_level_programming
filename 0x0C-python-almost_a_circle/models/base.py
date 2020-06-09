@@ -2,13 +2,14 @@
 """Models module
     """
 import json
-import turtle
 import random
 
 
 class Base:
-    """manage id attribute in all your future classes
-    and to avoid duplicating the same code
+    """[summary]
+
+    Returns:
+        [type]: [description]
     """
     __nb_objects = 0
 
@@ -19,7 +20,7 @@ class Base:
             id ([type], optional): [description]. Defaults to None.
         """
 
-        if id is not None:
+        if id:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -78,14 +79,12 @@ class Base:
         Returns:
             [type]: [description]
         """
-        if cls.__name__ == 'Rectangle':
-            inst = cls(1, 1)
-
-        if cls.__name__ == 'Square':
-            inst = cls(1)
-
-        inst.update(**dictionary)
-        return inst
+        if cls.__name__ == "Rectangle":
+            lst = cls(1, 1)
+        if cls.__name__ == "Square":
+            lst = cls(1)
+        lst.update(**dictionary)
+        return lst
 
     @classmethod
     def load_from_file(cls):
@@ -101,13 +100,3 @@ class Base:
 
         except FileNotFoundError:
             return []
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        """[summary]
-
-        Args:
-            list_rectangles ([type]): [description]
-            list_squares ([type]): [description]
-        """
-        pass
