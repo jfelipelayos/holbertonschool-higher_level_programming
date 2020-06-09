@@ -6,7 +6,7 @@
 import json
 
 
-class Base:
+class Base():
     """[summary]
 
     Returns:
