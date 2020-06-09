@@ -3,6 +3,9 @@
     """
 
 import json
+import turtle
+import random
+import time
 
 
 class Base():
@@ -100,3 +103,47 @@ class Base():
 
         except:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+
+        win = turtle.Screen()
+        turtle.title("Almost a circle")
+
+        win.bgcolor("black")
+
+        colors_square = ["green yellow", "dark cyan", "medium slate blue"]
+        colors_rectangle = ["turquoise", "yellow", "magenta"]
+
+        turtle.setup(1080, 720)
+        turtle.shape("square")
+        turtle.speed(2)
+        turtle.pensize(4)
+
+        for rectangle in list_rectangles:
+            turtle.goto(random.randint(-350, 100), random.randint(-350, 100))
+            turtle.pendown()
+            for i in range(4):
+                turtle.color(random.choice(colors_rectangle))
+                turtle.forward(rectangle.width if i %
+                               2 == 0 else rectangle.height)
+                turtle.left(90)
+            turtle.penup()
+            turtle.color("white")
+            turtle.write(rectangle, font=("Arial", 15, "bold"))
+            time.sleep(2)
+
+        for square in list_squares:
+            turtle.goto(random.randint(-350, 100), random.randint(-350, 100))
+            turtle.pendown()
+            for i in range(4):
+                turtle.color(random.choice(colors_square))
+                turtle.forward(square.width)
+                turtle.left(90)
+            turtle.penup()
+            turtle.color("white")
+            turtle.write(square, font=("Arial", 15, "bold"))
+            time.sleep(2)
+
+        turtle.done()
+        turtle.bye()
