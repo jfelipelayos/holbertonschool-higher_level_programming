@@ -13,6 +13,14 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """[summary]
+
+        Args:
+            size ([type]): [description]
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+            id ([type], optional): [description]. Defaults to None.
+        """
 
         super().__init__(size, size, x, y, id)
         self.size = size
@@ -28,14 +36,26 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return super().width
 
     @size.setter
     def size(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """[summary]
+        """
 
         if args:
             original_square_elements = [self.id, self.size, self.x, self.y]
@@ -57,6 +77,11 @@ class Square(Rectangle):
                     self.y = kwargs[i]
 
     def to_dictionary(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         square_dict = {"id": self.id,
                        "size": self.width,
                        "x": self.x,

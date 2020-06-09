@@ -7,12 +7,17 @@ import random
 
 
 class Base:
-    """manage id attribute in all your future classes 
+    """manage id attribute in all your future classes
     and to avoid duplicating the same code
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """[summary]
+
+        Args:
+            id ([type], optional): [description]. Defaults to None.
+        """
 
         if id is not None:
             self.id = id
@@ -34,7 +39,7 @@ class Base:
         if list_dictionaries:
             json_representation = json.dumps(list_dictionaries)
         else:
-            json_representation = []
+            json_representation = "[]"
 
         return json_representation
 
@@ -92,7 +97,7 @@ class Base:
         try:
             with open("{}.json".format(cls.__name__), mode="r") as f:
                 instances_list = cls.from_json_string(f.read())
-                return [cls.create(**dictionary) for dictionary in instances_list]
+                return [cls.create(**dic) for dic in instances_list]
 
         except FileNotFoundError:
             return []

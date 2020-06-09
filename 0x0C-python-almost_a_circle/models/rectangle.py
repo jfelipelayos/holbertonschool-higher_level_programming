@@ -12,6 +12,15 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """[summary]
+
+        Args:
+            width ([type]): [description]
+            height ([type]): [description]
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+            id ([type], optional): [description]. Defaults to None.
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -21,40 +30,80 @@ class Rectangle(Base):
     # Width getter and setter
     @property
     def width(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
         self.integer_validator("width", value)
         self.__width = value
 
     # height getter and setter
     @property
     def height(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
         self.integer_validator("height", value)
         self.__height = value
 
     # x getter and setter
     @property
     def x(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
         self.integer_validator("x", value)
         self.__x = value
 
     # y getter and setter
     @property
     def y(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+        """
         self.integer_validator("y", value)
         self.__y = value
 
