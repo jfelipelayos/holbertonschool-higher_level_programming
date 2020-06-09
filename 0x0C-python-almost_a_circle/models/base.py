@@ -2,7 +2,6 @@
 """Models module
     """
 
-
 import json
 
 
