@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""All cities by state"""
+""" first State object from the database"""
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
