@@ -8,7 +8,7 @@ import sys
 
 if __name__ == "__main__":
 
-    if len(argv) < 2:
+    if len(sys.argv) < 2:
         data = ""
     else:
         data = sys.argv[1]
