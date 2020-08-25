@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
     req = requests.post("http://0.0.0.0:5000/search_user", data)
     try:
-        dict = req.json()
-        if len(dict):
+
+        if len(req.json()) != 0:
             print("[{}] {}".format(dict["id"], dict["name"]))
         else:
             print("No result")
