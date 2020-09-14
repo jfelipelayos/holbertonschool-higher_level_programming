@@ -3,26 +3,29 @@ import requests
 import sys
 import json
 
-user_info = requests.get(
-    'https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
-data = requests.get(
-    'https://jsonplaceholder.typicode.com/users/{}/todos'.format(sys.argv[1]))
+if __name__ == "__main__":
 
-done_taks = 0
-total_taks = 0
+    user_info = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
+    data = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}/todos'
+        .format(sys.argv[1]))
 
-emp_name = user_info.json()["name"]
+    done_taks = 0
+    total_taks = 0
 
-todos_list = json.loads(data.text)
+    emp_name = user_info.json()["name"]
 
-for key in todos_list:
-    if key['completed'] is True:
-        done_taks += 1
-    total_taks += 1
+    todos_list = json.loads(data.text)
 
-print("Employee {} is done with tasks({}/{}):"
-      .format(emp_name, done_taks, total_taks))
+    for key in todos_list:
+        if key['completed'] is True:
+            done_taks += 1
+        total_taks += 1
 
-for key in todos_list:
-    if key['completed'] is True:
-        print("     {}".format(key['title']))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(emp_name, done_taks, total_taks))
+
+    for key in todos_list:
+        if key['completed'] is True:
+            print("     {}".format(key['title']))
