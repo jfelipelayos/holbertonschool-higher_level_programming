@@ -1,10 +1,10 @@
 #!/usr/bin/node
-const myArgs = process.argv;
+const size = parseInt(process.argv[2], 10);
 
-if (myArgs[2] === undefined) {
-  console.log('Missing size');
+if (isNaN(size)) {
+  console.log("Missing size");
 } else {
-  for (let i = 0; i < myArgs[2]; i++) {
-    console.log('X'.repeat(myArgs[2]));
+  for (let i = 0; i < size; i++) {
+    console.log("X".repeat(size));
   }
 }
