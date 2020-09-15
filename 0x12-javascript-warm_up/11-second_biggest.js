@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const myArgs = process.argv.slice(2);
 
-function compareNum(a, b) {
+function compareNum (a, b) {
   return a - b;
 }
 
