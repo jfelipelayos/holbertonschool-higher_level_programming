@@ -10,7 +10,7 @@ request(API_URL, function (error, response, body) {
     const data = JSON.parse(body).results;
     for (const i of data) {
       for (const j of i.characters) {
-        if (j === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (j.slice(-3) === '18/') {
           cont++;
         }
       }
