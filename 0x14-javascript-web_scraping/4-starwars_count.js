@@ -3,7 +3,7 @@ const request = require('request');
 const argv = process.argv;
 const API_URL = argv[2];
 let cont = 0;
-request(API_URL, (error, response, body) => {
+request(API_URL, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
